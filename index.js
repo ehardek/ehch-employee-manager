@@ -23,9 +23,12 @@ function runSearch() {
         choices: [
           "Find employee by name",
           "View all Employees",
-          "Find data within a specific range",
-          "Search for a specific song",
-          "Find artists with a top song and top album in the same year"
+          "View All Employees by Department ID",
+          "View All Employees by Manager",
+          "Add Employee",
+          "Add Department",
+          "Add Role",
+          "Exit"
         ]
       })
       .then(function(answer) {
@@ -35,24 +38,54 @@ function runSearch() {
           break;
   
         case "View All Employees":
-          viewAll();
+          viewEmployee();
           break;
   
-        case "View All Employees by department":
+        case "View All Employees by Department":
           departmentSearch();
           break;
   
         case "View All Employees by Manager":
-          songSearch();
+          managerSearch();
           break;
   
         case "Add an Employee":
           addEmployee();
           break;
+        case "Add a Department":
+          addDepartment();
+          break;
+        case "Exit":
+          connection.end();
+          break;
         }
       });
-  }
+  };
 
-  function addEmployee(){
-      
-  }
+  function viewEmployee 
+
+
+//   function addEmployee(){
+//     inquirer.prompt([
+//         {
+//            type: "input",
+//            message: "What is the Employee's name?",
+//            name: "name"  
+//         },
+//         {
+//             type: "input",
+//             message: "What is the Employee's id number?",
+//             name: "id"  
+//          },
+//          {
+//             type: "input",
+//             message: "What is the Employee's Manager's ID?",
+//             name:"managerId"   
+//         },
+//         {
+//             type: "input",
+//             message: "What is the Employee's Role by ID?"
+//         }
+//     ]
+//     ).then(connection.query())
+//         }

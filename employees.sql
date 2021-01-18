@@ -12,8 +12,10 @@ CREATE TABLE roles (
     id INT (10) NOT NULL,
     jobTitle VARCHAR(30),
     salary DECIMAL(10,2),
-    department_id INT (10) NOT NULL,
-    PRIMARY KEY (id)
+    departments_id INT (10) NOT NULL,
+    PRIMARY KEY (id),
+  FOREIGN KEY (department_id)
+    REFERENCES department(id)
 );
 
 CREATE TABLE employees (
@@ -23,10 +25,13 @@ CREATE TABLE employees (
     role_id INT (10) NOT NULL,
     manager_id INT (10),
     PRIMARY KEY (id)
+--     FOREIGN KEY(role_id)
+--     REFERENCES role(id)
+   --  FOREIGN KEY(manager_id)
+--     REFERENCES employees(id)
 );
 
-SELECT * FROM 
-
-
-
+SELECT * FROM departments;
+SELECT * FROM employees;
+SELECT * FROM roles;
 -- manager_id - INT to hold reference to another employee that manages the employee being Created. This field may be null if the employee has no manager
