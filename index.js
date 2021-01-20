@@ -1,5 +1,6 @@
 const inquirer = require ("inquirer") 
 const mysql = require ("mysql")
+const consoleTable = require('console.table')
 
 const connection = mysql.createConnection({
     host: "localhost",
@@ -62,7 +63,13 @@ function runSearch() {
       });
   };
 
-  function viewEmployee 
+  function viewEmployee (){
+      connection.query("SELECT * FROM employee", function(err,res){
+        if (err) throw err
+        console.table(res)
+        runSearch();
+      })
+  }
 
 
 //   function addEmployee(){
